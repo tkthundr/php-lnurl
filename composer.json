@@ -1,0 +1,31 @@
+{
+  "name": "tkijewski/php-lnurl",
+  "description": "PHP implementation of lnurl Spec",
+  "type": "library",
+  "homepage": "https://github.com/tkijewski/php-lnurl",
+  "license": "Unlicense",
+  "authors": [
+    {
+      "name": "Tim Kijewski",
+      "role": "Author"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "tkijewski\\lnurl\\": "src/"
+    },
+    "files": ["src/lnurl.php"]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "tkijewski\\test\\lnurl\\": "test/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.4.0",
+    "squizlabs/php_codesniffer": "^2.0.0"
+  },
+  "require": {
+    "bitwasp/bech32": "^0.0.1"
+  }
+}
