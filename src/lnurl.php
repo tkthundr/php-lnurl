@@ -4,6 +4,12 @@ namespace tkijewski\lnurl;
 
 use tkijewski\lnurl\exception\LnurlException;
 
+/**
+ * Encode a url into lnurl bech32 format
+ * @param $url
+ * @return string
+ * @throws \BitWasp\Bech32\Exception\Bech32Exception
+ */
 function encodeUrl($url)
 {
     $arr = str_split($url);
@@ -15,9 +21,18 @@ function encodeUrl($url)
     $bits = \BitWasp\Bech32\convertBits($arr, count($arr), 8, 5, TRUE);
     $encoded = \BitWasp\Bech32\encode('lnurl', $bits);
     $encoded = strtoupper($encoded);
+    
     return $encoded;
 }
 
+
+/**
+ * Decode/parse an lnurl bech32 string into an array of elements.
+ * @param $lnurl
+ * @return mixed ['url'=>URL,'tag'=>TAG,'queryParam1'=>'value1',....]
+ * @throws LnurlException
+ * @throws \BitWasp\Bech32\Exception\Bech32Exception
+ */
 function decodeUrl($lnurl)
 {
 	list ($hrp, $data) = \Bitwasp\Bech32\decodeRaw($lnurl);
@@ -30,6 +45,12 @@ function decodeUrl($lnurl)
     foreach ($decoded as $char) {
         $url .= chr($char);
     }
+    parse_str(@parse_url($url)['query'], $queryParameters);
 
-	return $url;
+    $arr = $queryParameters;
+    $arr['url'] = $url;
+
+	return $arr;
 }
+
+
