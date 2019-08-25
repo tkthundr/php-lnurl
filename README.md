@@ -19,12 +19,17 @@ require __DIR__ . '/vendor/autoload.php';
 
 use tkijewski\lnurl;
 
-$url = 'https://paywall.link?someIdentifier=292e29j29j19nd91m2mfmmurn843';
+$lnurl = lnurl\encodeUrl('https://paywall.link?someIdentifier=292e29j29j19nd91m2mfmmurn843&tag=withdraw');
+//LNURL1DP68GURN8GHJ7URP09MKZMRV9EKXJMNT8AEK7MT9F9JX2MN5D9NXJETJ85ERJVN9XGUK5V3EDGCNJMNY8YCK6VNDVEKK6ATJDCURGVEXW3SKW0THD96XSERJV9MS95LDUW
 
-$lnurl = lnurl\encodeUrl($url);
-//LNURL1DP68GURN8GHJ7URP09MKZMRV9EKXJMNT8AEK7MT9F9JX2MN5D9NXJETJ85ERJVN9XGUK5V3EDGCNJMNY8YCK6VNDVEKK6ATJDCURGVC4UCD6K
 
-echo lnurl\decodeUrl($lnurl);
-//https://paywall.link?someIdentifier=292e29j29j19nd91m2mfmmurn843
+print_r( lnurl\decodeUrl($lnurl) );
+/*
+ * [
+ *   'url' => 'https://paywall.link?someIdentifier=292e29j29j19nd91m2mfmmurn843&tag=withdraw',
+ *   'tag' => 'withdraw'
+ *   'someIdentifier' => '292e29j29j19nd91m2mfmmurn843'
+ * ] 
+ */
 
 ```
