@@ -6,7 +6,7 @@ Uses the bech32 library https://github.com/Bit-Wasp/bech32
 ## Installation
 
 ```
-composer require tkijewski/php-lnurl
+$ composer require tkijewski/php-lnurl
 ```
 
 
@@ -32,4 +32,10 @@ print_r( lnurl\decodeUrl($lnurl) );
  * ] 
  */
 
+```
+
+## Test
+
+```
+$ vendor/bin/phpunit
 ```
