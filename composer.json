@@ -26,6 +26,6 @@
     "squizlabs/php_codesniffer": "^2.0.0"
   },
   "require": {
-    "bitwasp/bech32": "^0.0.1"
+    "bitwasp/bech32": "*"
   }
 }
