@@ -4,6 +4,10 @@ namespace tkijewski\lnurl;
 
 use tkijewski\lnurl\exception\LnurlException;
 
+const TAG_WITHDRAW  = 'withdrawRequest';
+const TAG_LOGIN     = 'login';
+const TAG_CHANNEL   = 'channelRequest';
+
 /**
  * Encode a url into lnurl bech32 format
  * @param $url
