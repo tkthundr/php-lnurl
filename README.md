@@ -1,5 +1,5 @@
 # php-lnurl
-PHP implementation of the `lnurl` protocol https://github.com/btcontract/lnurl-rfc/blob/master/spec.md
+PHP implementation of the `lnurl` protocol https://github.com/fiatjaf/lnurl-rfc
 
 Uses the bech32 library https://github.com/Bit-Wasp/bech32
 
