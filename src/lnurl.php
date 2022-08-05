@@ -18,7 +18,7 @@ function encodeUrl($url)
 {
     $arr = str_split($url);
 
-    array_walk($arr, function(&$value, &$key) {
+    array_walk($arr, function(&$value, $key) {
         $value = ord($value);
     });
 
