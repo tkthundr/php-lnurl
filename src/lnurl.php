@@ -49,7 +49,7 @@ function decodeUrl($lnurl)
     foreach ($decoded as $char) {
         $url .= chr($char);
     }
-    parse_str(@parse_url($url)['query'], $queryParameters);
+    parse_str(@parse_url($url)['query'] ?? '', $queryParameters);
 
     $arr = $queryParameters;
     $arr['url'] = $url;
